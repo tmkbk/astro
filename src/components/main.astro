@@ -2,4 +2,69 @@
 
 ---
 
-<p>主要内容区域</p>
+<div class="userInfo">
+  <a href="/about">
+    <img src="/src/assets/imgs/OIP2.jpg" alt="" />
+  </a>
+</div>
+<div class="category">
+  <h5>Tags</h5>
+  <div>
+    <span class="iconfont blogtags tags">Web</span>
+    <span class="iconfont blogtags tags">HTML</span>
+    <span class="iconfont blogtags tags">CSS</span>
+    <span class="iconfont blogtags tags">javascript</span>
+    <span class="iconfont blogtags tags">vue</span>
+    <span class="iconfont blogtags tags">React.js</span>
+  </div>
+</div>
+<style lang="less" scoped>
+  .userInfo {
+    position: relative;
+    top: -180px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 3px 5px 5px 0px #888;
+    backdrop-filter: blur(14px) saturate(180%);
+    padding: 10px;
+    box-sizing: border-box;
+    a {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 10px;
+      object-fit: cover;
+      img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 4px 3px rgba(85, 81, 81, 0.5);
+      }
+    }
+  }
+
+  .category {
+    position: relative;
+    top: -160px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 3px 5px 5px 0px #888;
+    backdrop-filter: blur(14px) saturate(180%);
+    padding: 10px 15px;
+    box-sizing: border-box;
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      .tags {
+        padding: 3px 5px;
+        border-radius: 10px;
+        letter-spacing: 1px;
+        color: white;
+        background-color: #6194a7;
+        margin: 5px;
+      }
+    }
+  }
+</style>

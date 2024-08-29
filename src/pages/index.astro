@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Slider from "../components/Slider.astro";
 import NavigationBar from "../components/NavigationBar.astro";
+import Main from "../components/main.astro";
 ---
 
 <!doctype html>
@@ -10,12 +11,24 @@ import NavigationBar from "../components/NavigationBar.astro";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>玛卡巴卡</title>
-		<style></style>
+		<style>
+			main div {
+				width: 1200px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 3em 1em;
+			}
+		</style>
 	</head>
 	<body>
 		<NavigationBar />
 		<Slider />
-		<main>主要</main>
+		<main>
+			<div>
+				<Main />
+			</div>
+		</main>
+
 		<script is:inline src="/public/backgroud.js"></script>
 	</body>
 </html>

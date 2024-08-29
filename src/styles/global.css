@@ -73,6 +73,7 @@
 }
 
 .blogtags:before {
+	margin-right: 5px;
 	content: "\e883";
 }
 
@@ -102,13 +103,11 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 	user-select: none;
+	/* background-color: #eee; */
 }
 
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
+	background-color: #eee;
 }
 
 h1,

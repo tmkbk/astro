@@ -2,6 +2,7 @@
 import Slider from "../components/Slider.astro";
 import NavigationBar from "../components/NavigationBar.astro";
 import "../styles/global.css";
+import Main from "../components/main.astro";
 ---
 
 <!doctype html>
@@ -10,9 +11,22 @@ import "../styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>关于我</title>
+    <style>
+      main div {
+        width: 1200px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 3em 1em;
+      }
+    </style>
   </head>
   <body>
-		<NavigationBar />
-		<Slider />
+    <NavigationBar />
+    <Slider />
+    <main>
+      <div>
+        <Main />
+      </div>
+    </main>
   </body>
 </html>
