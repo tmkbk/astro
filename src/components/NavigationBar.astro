@@ -1,0 +1,76 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<script src="../styles/background.js"></script>
+<nav>
+  <div class="nav">
+    <!-- 左侧区域 -->
+    <span class="nav-left">MKBK</span>
+    <!-- 右侧区域 -->
+    <span class="nav-right">
+      <ul class="clickNav">
+        <li><a href="/" class="iconfont blogzhuye active">首页</a></li>
+        <li><a href="/blog" class="iconfont blogboke">博客</a></li>
+        <li><a href="/about" class="iconfont blogguanyu">关于</a></li>
+      </ul>
+    </span>
+  </div>
+</nav>
+<style lang="less" scoped>
+  nav {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    .nav {
+      position: absolute;
+      // top: -50px;
+      transition: 0.7s all;
+      width: 1000px;
+      height: 70px;
+      background-color: #fff;
+      border-radius: 0 0 15px 15px;
+      padding: 0 50px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      // &:hover {
+      //   transform: translateY(49px);
+      // }
+      backdrop-filter: blur(14px) saturate(180%);
+      -webkit-backdrop-filter: blur(14px) saturate(180%);
+      background-color: rgba(206, 206, 206, 0.5);
+      .nav-left {
+        height: 40px;
+        font-size: 1.4em;
+        padding: 10px 10px;
+        border-radius: 10px;
+        transition: all 0.5s;
+        font-family: "字魂白鸽天行体";
+        &:hover {
+          color: blueviolet;
+        }
+      }
+      .nav-right {
+        ul {
+          li {
+            display: inline-block;
+            text-decoration: none;
+            padding: 0 10px;
+            .active {
+              color: #b6e8fa;
+            }
+            a {
+              font-weight: bold;
+              &:hover {
+                color: blueviolet;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

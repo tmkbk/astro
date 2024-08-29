@@ -1,0 +1,102 @@
+---
+
+---
+
+<div>
+  <div class="silder">
+    <div class="center">
+      <h1>
+        <span class="text"></span>
+      </h1>
+    </div>
+  </div>
+</div>
+<script>
+  // 设置打字效果
+  // 文字区域
+  const text = document.querySelector("h1 .text");
+  // 文字内容
+  const txt = ["北极光之夜。", "夜越黑，星星越亮。", "答案在风中飘荡。"];
+
+  let fontIndex = 0;
+  // 下标
+  let subscript = 0;
+  // 改变内容标志
+  let changeFlag = true;
+
+  setInterval(function () {
+    if (text) {
+      if (changeFlag) {
+        text.innerHTML = txt[subscript].slice(0, ++fontIndex);
+      } else {
+        text.innerHTML = txt[subscript].slice(0, fontIndex--);
+      }
+    }
+
+    if (fontIndex === txt[subscript].length + 3) {
+      changeFlag = false;
+    } else if (fontIndex < 0) {
+      fontIndex = 0;
+      changeFlag = true;
+      subscript++;
+      if (subscript >= txt.length) {
+        subscript = 0;
+      }
+    }
+  }, 200);
+</script>
+<style lang="less" scoped>
+  .silder {
+    background-image: url(/src/assets/imgs/01background.png);
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    overflow: hidden;
+    .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 48px;
+  color: #ccc;
+
+  h1 {
+    position: absolute;
+    top: 20px;
+  }
+}
+    .text {
+      font-family: "MiaoZi";
+      display: inline-block;
+      position: relative;
+      font-size: 40px;
+      height: 60px;
+      line-height: 60px;
+      color: #f5b7cb;
+    }
+
+    .text::after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: 5px;
+      height: 50px;
+      width: 3px;
+      background-color: #f8cede;
+      animation: typeWriter 0.6s steps(1) infinite;
+    }
+
+    /* 打字机特效 */
+    @keyframes typeWriter {
+      0%,
+      100% {
+        background-color: #f8cede;
+      }
+
+      50% {
+        background-color: transparent;
+      }
+    }
+  }
+</style>
