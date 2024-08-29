@@ -2,25 +2,35 @@
 
 ---
 
-<div class="userInfo">
-  <a href="/about">
-    <img
-      src="https://raw.githubusercontent.com/tmkbk/images/main/images/202408292221040.jpg"
-      alt="头像"
-    />
-  </a>
-</div>
-<div class="category">
-  <h5>Tags</h5>
-  <div>
-    <span class="iconfont blogtags tags">Web</span>
-    <span class="iconfont blogtags tags">HTML</span>
-    <span class="iconfont blogtags tags">CSS</span>
-    <span class="iconfont blogtags tags">javascript</span>
-    <span class="iconfont blogtags tags">vue</span>
-    <span class="iconfont blogtags tags">React.js</span>
+<div style="display: flex;flex-wrap: wrap;flex-direction: column;width:300px;">
+  <!-- 头像区域 -->
+  <div class="userInfo">
+    <a href="/about">
+      <img
+        src="https://raw.githubusercontent.com/tmkbk/images/main/images/202408292221040.jpg"
+        alt="头像"
+      />
+    </a>
+  </div>
+  <div class="showInfo">这是显示信息的区域</div>
+  <!-- 标签区域 -->
+  <div class="category">
+    <h5>Tags</h5>
+    <div>
+      <span class="iconfont blogtags tags">Web</span>
+      <span class="iconfont blogtags tags">HTML</span>
+      <span class="iconfont blogtags tags">CSS</span>
+      <span class="iconfont blogtags tags">javascript</span>
+      <span class="iconfont blogtags tags">vue</span>
+      <span class="iconfont blogtags tags">React.js</span>
+    </div>
   </div>
 </div>
+<div style="display: flex;flex-direction: row;justify-content: flex-end;">
+  <!-- 展示区域 -->
+  
+</div>
+
 <style lang="less" scoped>
   .userInfo {
     position: relative;
@@ -69,5 +79,15 @@
         margin: 5px;
       }
     }
+  }
+
+  .showInfo {
+    width: 880px;
+    margin-left: 20px;
+    background-color: red;
+    position: relative;
+    height: 1000px;
+    float: right;
+    top: -100px;
   }
 </style>
