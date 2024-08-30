@@ -32,6 +32,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           >
         </li>
       </ul>
+      <div class="nav-all iconfont blogshouqi">
+        <!-- 缩小后导航汇总页 -->
+        <ul class="showNav">
+          <li>
+            <a
+              target="_self"
+              href="/"
+              class="iconfont blogzhuye"
+              :javascript:void(0)>首页</a
+            >
+          </li>
+          <li>
+            <a
+              target="_self"
+              href="/blog"
+              class="iconfont blogboke"
+              :javascript:void(0)>博客</a
+            >
+          </li>
+          <li>
+            <a href="/about" class="iconfont blogguanyu" :javascript:void(0)
+              >关于</a
+            >
+          </li>
+        </ul>
+      </div>
     </span>
   </div>
 </nav>
@@ -51,7 +77,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       z-index: 1000;
       // top: -50px;
       transition: 0.7s all;
-      width: 1100px;
+      width: 80%;
       height: 70px;
       background-color: #fff;
       border-radius: 0 0 15px 15px;
@@ -98,6 +124,58 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 color: #c35d5b;
                 color: #b6e8fa;
               }
+            }
+          }
+        }
+        .nav-all {
+          display: none;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 636px) {
+    nav {
+      position: absolute;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      .nav {
+        position: absolute;
+        position: fixed;
+        z-index: 1000;
+        transition: 0.7s all;
+        width: 100%;
+        height: 60px;
+        background-color: red;
+        border-radius: 0 0 15px 15px;
+        padding: 0 50px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        // &:hover {
+        //   transform: translateY(49px);
+        // }
+        backdrop-filter: blur(14px) saturate(180%);
+        -webkit-backdrop-filter: blur(14px) saturate(180%);
+        background-color: rgba(206, 206, 206, 0.5);
+        .nav-right {
+          ul {
+            display: none;
+          }
+          .nav-all {
+            color: #4b5162;
+            font-size: 30px;
+            position: relative;
+            top: 9px;
+            left: 20px;
+            display: inline-block;
+            .showNav {
+              width: 20px;
+              height: 20px;
+              color: red;
+            }
+            &:hover {
             }
           }
         }

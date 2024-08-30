@@ -1,0 +1,22 @@
+---
+const platform = "github";
+const date = new Date();
+---
+
+<footer>
+  <div class="container">
+    <p>@2024{date.getFullYear() === 2024 ? "" : "-" + date.getFullYear()} 玛卡巴卡</p>
+  </div>
+</footer>
+
+<style lang="less" scoped>
+  footer {
+    .container {
+      margin: 0 auto;
+      width: 1200px;
+      height: 60px;
+      text-align: center;
+      line-height: 45px;
+    }
+  }
+</style>

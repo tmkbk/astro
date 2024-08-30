@@ -46,7 +46,7 @@
 @font-face {
 	font-family: "iconfont";
 	/* Project id 4668627 */
-	src: url('//at.alicdn.com/t/c/font_4668627_tvpp06ro3.woff2?t=1724928968265') format('woff2'), url('//at.alicdn.com/t/c/font_4668627_tvpp06ro3.woff?t=1724928968265') format('woff'), url('//at.alicdn.com/t/c/font_4668627_tvpp06ro3.ttf?t=1724928968265') format('truetype');
+	src: url('//at.alicdn.com/t/c/font_4668627_fbthbonvg7b.woff2?t=1725020124604') format('woff2'), url('//at.alicdn.com/t/c/font_4668627_fbthbonvg7b.woff?t=1725020124604') format('woff'), url('//at.alicdn.com/t/c/font_4668627_fbthbonvg7b.ttf?t=1725020124604') format('truetype');
 }
 
 .iconfont {
@@ -55,6 +55,10 @@
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.blogshouqi:before {
+	content: "\e628";
 }
 
 .blogboke::after {
