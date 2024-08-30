@@ -1,24 +1,11 @@
 ---
+import BlogList from "../components/BlogList.astro";
+import Main from "../components/main.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>博客</title>
-    <style>
-      main div {
-        width: 1200px;
-        max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 3em 1em;
-      }
-    </style>
-  </head>
-  <body>
-    <BaseLayout>
-    </BaseLayout>
-  </body>
-</html>
+<BaseLayout>
+  <Main>
+    <BlogList />
+  </Main>
+</BaseLayout>

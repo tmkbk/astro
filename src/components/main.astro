@@ -3,12 +3,7 @@ const { pageTitle } = Astro.props;
 ---
 
 <div class="box">
-  <div class="box1">
-    <!-- 展示区域 -->
-    <div class="showInfo">{pageTitle}
-      <a href="/posts/post-1">测试文章</a>
-    </div>
-  </div>
+  <slot />
   <div class="box2">
     <!-- 头像区域 -->
     <div class="userInfo">
@@ -82,24 +77,11 @@ const { pageTitle } = Astro.props;
     }
   }
 
-  .showInfo {
-    padding: 40px 20px;
-    width: 880px;
-    margin-left: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    position: relative;
-    float: right;
-    border-radius: 10px;
-  }
   .box {
     display: flex;
     flex-direction: row-reverse;
   }
-  .box1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
+
   .box2 {
     display: flex;
     flex-wrap: wrap;
