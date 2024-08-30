@@ -1,8 +1,5 @@
 ---
-import Main from "../components/main.astro";
-import NavigationBar from "../components/NavigationBar.astro";
-import Slider from "../components/Slider.astro";
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <!doctype html>
@@ -21,12 +18,7 @@ import "../styles/global.css";
     </style>
   </head>
   <body>
-    <NavigationBar />
-    <Slider />
-    <main>
-      <div>
-        <Main />
-      </div>
-    </main>
+    <BaseLayout>
+    </BaseLayout>
   </body>
 </html>

@@ -1,11 +1,13 @@
 ---
-
+const { pageTitle } = Astro.props;
 ---
 
 <div class="box">
   <div class="box1">
     <!-- 展示区域 -->
-    <div class="showInfo">这是显示信息的区域</div>
+    <div class="showInfo">{pageTitle}
+      <a href="/posts/post-1">测试文章</a>
+    </div>
   </div>
   <div class="box2">
     <!-- 头像区域 -->
