@@ -17,13 +17,15 @@ const jsoncString = fs.readFileSync(
 const myTheme = ExpressiveCodeTheme.fromJSONString(jsoncString)
 
 export default defineConfig({
+  site: {
+    title: 'Your Website Title',
+    description: 'A brief description of your website.'
+  },
   integrations: [
     astroExpressiveCode({
       plugins: [pluginLineNumbers()],
-      themes:['snazzy-light','min-light','light-plus','vitesse-light'],
-      styleOverrides: {
-        
-      }
+      themes: ['snazzy-light', 'min-light', 'light-plus', 'vitesse-light'],
+      styleOverrides: {}
     }),
     mdx(),
     sitemap(),
