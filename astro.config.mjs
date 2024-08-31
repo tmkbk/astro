@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-
+import { remarkReadingTime } from './remark-reading-time.mjs'
 import preact from '@astrojs/preact'
 
 // https://astro.build/config
@@ -9,6 +9,7 @@ export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), preact()],
   markdown: {
+    remarkPlugins: [remarkReadingTime],
     shikiConfig: {
       // 选择 Shiki 内置的主题（或添加你自己的主题）
       // https://shiki.style/themes

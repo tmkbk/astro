@@ -2,6 +2,7 @@
 import Category from "../components/Category.astro";
 import Main from "../components/main.astro";
 import BaseLayout from "./BaseLayout.astro";
+import "../styles/mdBase.css"
 // const allPosts = await Astro.glob("../pages/posts/*.md");
 const { frontmatter } = Astro.props;
 ---
@@ -13,7 +14,25 @@ const { frontmatter } = Astro.props;
     <div class="box1" slot="show">
       <!-- 展示区域 -->
       <div class="showInfo">
-        <span>{frontmatter.pubDate}</span>
+        <h1>{frontmatter.title}</h1>
+        <div class="showBaseInfo">
+          <div>💻编辑时间： <span>{frontmatter.pubDate}</span></div>
+          <div>
+            🔍字数统计： <span>{frontmatter.minutesRead.words}字</span>
+          </div>
+          <div>
+            🕑阅读时长： <span
+              >{Math.floor(frontmatter.minutesRead.minutes)}min{
+                Math.floor(
+                  (frontmatter.minutesRead.minutes -
+                    Math.trunc(frontmatter.minutesRead.minutes)) *
+                    60,
+                )
+              }s</span
+            >
+          </div>
+        </div>
+
         <slot />
         <a href="">下一篇</a>
       </div>
@@ -33,6 +52,9 @@ const { frontmatter } = Astro.props;
       position: relative;
       float: right;
       border-radius: 10px;
+      .showBaseInfo {
+        letter-spacing: 2px;
+      }
     }
   }
 </style>

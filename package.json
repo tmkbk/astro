@@ -16,7 +16,9 @@
     "@astrojs/sitemap": "^3.1.6",
     "astro": "^4.14.6",
     "less-loader": "^12.2.0",
-    "preact": "^10.23.2"
+    "mdast-util-to-string": "^4.0.0",
+    "preact": "^10.23.2",
+    "reading-time": "^1.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
