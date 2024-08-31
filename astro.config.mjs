@@ -17,10 +17,7 @@ const jsoncString = fs.readFileSync(
 const myTheme = ExpressiveCodeTheme.fromJSONString(jsoncString)
 
 export default defineConfig({
-  site: {
-    title: 'Your Website Title',
-    description: 'A brief description of your website.'
-  },
+  site: "https://tmkbk.netlify.app/",
   integrations: [
     astroExpressiveCode({
       plugins: [pluginLineNumbers()],
