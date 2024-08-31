@@ -18,9 +18,46 @@ tags: ['HTML', 'CSS', 'Vue', 'React', '小程序', 'uniapp', 'javaScript']
 
 > 语雀文档涉及版权，请大家不要在小组外传播
 
-```JS
+```javascript del={3} ins={6-8} title="config.js"
 // 代码块测试
-const test = "测试"
+const test = '测试'
+import { astroExpressiveCode } from 'astro-expressive-code' // 确保这个导入是正确的
+
+export const astroDocsExpressiveCode = () =>
+  astroExpressiveCode({
+    theme: 'one-dark-pro',
+    styleOverrides: {
+      // 设置全局代码块样式
+      codeBackground: 'var(--theme-code-bg)',
+      // ... 其他全局样式
+
+      // 假设这里可以直接在 styleOverrides 下设置文本标记的样式
+      // 注意：这取决于插件的实际实现
+      // 如果插件不直接支持，你可能需要查阅文档或联系插件作者
+      // 这里是一个假设的样式设置
+      // 'textMarkerStyle': { // 注意：这通常不是一个标准的键，你需要替换为正确的键
+      //   defaultChroma: '55' // 这可能不是一个有效的样式属性，只是一个示例
+      // },
+
+      // 如果插件使用特定的类名或选择器来标识文本标记，你可能需要这样设置
+      // '.some-text-marker-class': {
+      //   color: 'red', // 示例样式
+      //   // 其他样式...
+      // },
+
+      // 帧（frames）样式，如编辑器、终端等
+      frames: {
+        styleOverrides: {
+          // ... 你的帧样式设置
+        }
+      }
+
+      // 注意：删除或注释掉原来的 textMarkers 对象
+    }
+    // 如果 textMarkers 是一个布尔值来控制功能的启用/禁用
+    // 并且插件的默认行为是启用的，你可能不需要显式设置它
+    // textMarkers: true, // 如果需要禁用，则设置为 false
+  })
 ```
 
 ## HTML&CSS（12 天）
