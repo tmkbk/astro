@@ -4,10 +4,11 @@ import sitemap from '@astrojs/sitemap'
 import { remarkReadingTime } from './remark-reading-time.mjs'
 import preact from '@astrojs/preact'
 import astroDocsExpressiveCode, {
+  astroExpressiveCode,
   ExpressiveCodeTheme
 } from 'astro-expressive-code'
 import fs from 'node:fs'
-
+import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 // Load your saved theme JSONC file here and create a theme from it
 const jsoncString = fs.readFileSync(
   new URL(`./vscodeTheme.jsonc`, import.meta.url),
@@ -17,8 +18,12 @@ const myTheme = ExpressiveCodeTheme.fromJSONString(jsoncString)
 
 export default defineConfig({
   integrations: [
-    astroDocsExpressiveCode({
-      theme: [myTheme]
+    astroExpressiveCode({
+      plugins: [pluginLineNumbers()],
+      themes:['snazzy-light','min-light','light-plus','vitesse-light'],
+      styleOverrides: {
+        
+      }
     }),
     mdx(),
     sitemap(),

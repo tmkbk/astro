@@ -12,13 +12,11 @@ tags: ['HTML', 'CSS', 'Vue', 'React', '小程序', 'uniapp', 'javaScript']
 
 注意:
 
-> 标记为 ⭐ 或 ✅ 的，是非常重要的，但不代表其他的不重要
-
-> 文中标记时间为全天无课学习时间，项目时间单独列出，仅供参考
-
+> 标记为 ⭐ 或 ✅ 的，是非常重要的，但不代表其他的不重要<br />
+> 文中标记时间为全天无课学习时间，项目时间单独列出，仅供参考<br />
 > 语雀文档涉及版权，请大家不要在小组外传播
 
-```javascript del={3} ins={6-8} title="config.js"
+```javascript del={3} ins={6-8} title="config.js" showLineNumbers
 // 代码块测试
 const test = '测试'
 import { astroExpressiveCode } from 'astro-expressive-code' // 确保这个导入是正确的
