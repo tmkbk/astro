@@ -7,10 +7,15 @@ author: 'Astro 学习者'
 image:
   url: 'https://docs.astro.build/assets/rose.webp'
   alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ['astro', 'blogging', 'learning in public']
+tags: ['HTML', 'CSS', 'Vue','React','小程序','uniapp','javaScript']
 ---
 
 # 前端学习路线
+```js
+
+const a
+
+```
 
 注意:
 
