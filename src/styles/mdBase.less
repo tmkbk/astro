@@ -1,11 +1,33 @@
 :root {
-  --yinyong: #00d26a;
+  --yinyong: #6194a7;
+  --lineHight: 2em;
 }
 
+p {
+  font-size: 1em;
+  line-height: var(--lineHight);
+}
+
+h1 {
+  font-size: 2.8em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+// 代码块样式
+code {
+  border-radius: 5px;
+}
+
+// 这是引用块样式
 blockquote {
   border-left: 4px solid var(--yinyong);
+  padding: 0 0 0 8px;
 
+  // 引用块中文本样式
   p {
-    font-size: 16px;
+    font-size: 20px;
   }
 }

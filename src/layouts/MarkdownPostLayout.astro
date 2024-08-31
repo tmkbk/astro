@@ -16,23 +16,23 @@ const { frontmatter } = Astro.props;
       <div class="showInfo">
         <h1>{frontmatter.title}</h1>
         <div class="showBaseInfo">
-          <div>💻编辑时间： <code>{frontmatter.pubDate}</code></div>
+          <div>💻更新时间： <code>{frontmatter.pubDate}</code></div>
           <div>
             🔍字数统计： <code>{frontmatter.minutesRead.words}字</code>
           </div>
           <div>
             🕑阅读时长： <code
-              >{Math.floor(frontmatter.minutesRead.minutes)}min{
+              >{Math.floor(frontmatter.minutesRead.minutes)}'{
                 Math.floor(
                   (frontmatter.minutesRead.minutes -
                     Math.trunc(frontmatter.minutesRead.minutes)) *
                     60,
                 )
-              }s</code
+              }'</code
             >
           </div>
         </div>
-
+        <hr />
         <slot />
         <a href="">下一篇</a>
       </div>
@@ -46,7 +46,7 @@ const { frontmatter } = Astro.props;
     justify-content: flex-end;
     .showInfo {
       padding: 40px 20px;
-      width: 880px;
+      width: 840px;
       margin-left: 20px;
       background-color: rgba(255, 255, 255, 0.7);
       position: relative;

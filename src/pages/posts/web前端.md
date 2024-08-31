@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: '前端学习路线'
-pubDate: '2024-08-31'
+pubDate: '2024-08-31 17:42'
 description: '这是我 Astro 博客的第一篇文章。'
 author: 'Astro 学习者'
 image:
@@ -10,655 +10,330 @@ image:
 tags: ['HTML', 'CSS', 'Vue', 'React', '小程序', 'uniapp', 'javaScript']
 ---
 
-注意:
+## 类型声明
 
-> 标记为 ⭐ 或 ✅ 的，是非常重要的，但不代表其他的不重要<br />
-> 文中标记时间为全天无课学习时间，项目时间单独列出，仅供参考<br />
-> 语雀文档涉及版权，请大家不要在小组外传播
+TypeScript 代码最明显的特征，就是为 JavaScript 变量加上了**类型声明**。
 
-```javascript del={3} ins={6-8} title="config.js" showLineNumbers
-// 代码块测试
-const test = '测试'
-import { astroExpressiveCode } from 'astro-expressive-code' // 确保这个导入是正确的
-
-export const astroDocsExpressiveCode = () =>
-  astroExpressiveCode({
-    theme: 'one-dark-pro',
-    styleOverrides: {
-      // 设置全局代码块样式
-      codeBackground: 'var(--theme-code-bg)',
-      // ... 其他全局样式
-
-      // 假设这里可以直接在 styleOverrides 下设置文本标记的样式
-      // 注意：这取决于插件的实际实现
-      // 如果插件不直接支持，你可能需要查阅文档或联系插件作者
-      // 这里是一个假设的样式设置
-      // 'textMarkerStyle': { // 注意：这通常不是一个标准的键，你需要替换为正确的键
-      //   defaultChroma: '55' // 这可能不是一个有效的样式属性，只是一个示例
-      // },
-
-      // 如果插件使用特定的类名或选择器来标识文本标记，你可能需要这样设置
-      // '.some-text-marker-class': {
-      //   color: 'red', // 示例样式
-      //   // 其他样式...
-      // },
-
-      // 帧（frames）样式，如编辑器、终端等
-      frames: {
-        styleOverrides: {
-          // ... 你的帧样式设置
-        }
-      }
-
-      // 注意：删除或注释掉原来的 textMarkers 对象
-    }
-    // 如果 textMarkers 是一个布尔值来控制功能的启用/禁用
-    // 并且插件的默认行为是启用的，你可能不需要显式设置它
-    // textMarkers: true, // 如果需要禁用，则设置为 false
-  })
+```typescript ins={1} del={4} {3} title="测试.ts"
+let foo: string
+function toString(num: number): string {
+  return String(num)
+}
+// 写个注释看看示例
 ```
 
-## HTML&CSS（12 天）
-
-### HTML 基础
-
-- 标签语法
-  - 标签结构
-- HTML 骨架
-- 标签的关系
-- 注释
-- 标题标签
-- 段落标签
-- 换行和水平线
-- 文本格式化标签
-- 图像标签
-  - 图像属性
-  - 属性语法
-- 路径 ⭐
-
-  - 相对路径
-  - 绝对路径
-
-- 超链接标签
-- 音频
-- 视频
-
-### HTML 进阶
-
-- 列表
-  - 无序列表
-  - 有序列表
-  - 定义列表
-- 表格
-  - 基本使用
-  - 表格结构标签(了解)
-  - 合并单元格
-- 表单 ⭐
-  - input 标签
-  - input 标签占位文本
-  - 单选框
-  - 上传文件
-  - 多选框
-  - 下拉菜单
-  - 文本域
-  - label 标签
-  - 按钮
-- 语义化
-  - 无语义的布局标签
-  - 有语义的布局标签
-- 字符实体
-
-### CSS 基础
-
-- CSS 引入方式
-- 选择器
-  - 标签选择器
-  - 类选择器
-  - id 选择器
-  - 通配符选择器
-- 盒子尺寸和背景色
-- 文字控制属性
-  - 字体大小
-  - 字体样式
-  - 行高
-    - 单行文字垂直居中
-  - 字体族
-  - font 复合属性
-  - 文本缩进
-  - 文本对齐方式 ⭐
-  - 文本修饰线
-  - color 文字颜色
-  - 调试工具
-
-### CSS 进阶
-
-- 复合选择器
-  - 后代选择器 ⭐
-  - 子代选择器
-  - 并集选择器
-  - 交集选择器
-  - 伪类选择器
-    - 超链接伪类
-  - 基本选择器
-  - 复合选择器
-- CSS 特性
-  - 继承性
-  - 层叠性
-  - 优先级
-    - 基础选择器
-    - 复合选择器-叠加
-  - Emmet 写法
-- 背景属性
-  - 背景图
-  - 平铺方式
-  - 背景图位置
-  - 背景图缩放
-  - 背景图固定
-  - 背景复合属性
-- 显示模式
-  - 块级元素
-  - 行内元素
-  - 行内块元素
-  - 转换显示模式
-- 选择器
-  - 结构伪类选择器 ⭐
-  - 基本使用
-  - : nth-child(公式)
-  - 伪元素选择器
-- PxCook
-- 盒子模型
-  - 盒子模型-组成
-  - 边框线
-    - 四个方向
-    - 单方向边框线
-  - 内边距
-  - 尺寸计算
-  - 外边距
-  - 版心居中 ⭐
-  - 清除默认样式
-  - 元素溢出
-  - 外边距问题 ⭐
-    - 合并现象
-    - 外边距塌陷
-    - 行内元素-内外边距问题
-    - 圆角
-    - 盒子阴影(拓展)
-- 标准流
-- 浮动 ⭐
-  - 基本使用
-- 清除浮动
-
-  - 额外标签法
-  - 单伪元素法
-  - 双伪元素法
-  - overflow 法
-
-- Flex 布局 ⭐✅
-  - Flex 的组成
-  - 主轴对齐方式
-  - 侧轴对齐方式
-- 定位 ⭐✅
-  - 相对定位
-  - 绝对定位
-  - 定位居中
-  - 固定定位
-  - 堆叠层级 z-index
-- CSS 修饰属性
-  - 垂直对齐方式
-  - 过渡
-    - 表单获得焦点选择器 focus
-  - 透明度 opacity
-  - 光标类型 cursor
-    - 禁用鼠标样式
-  - 表格样式-合并相邻两个边框
-
-## 移动 Web
-
-- 空间转换
-  - 平移
-  - 视距
-  - 旋转
-  - 左手法则
-  - rotate3d(了解)
-  - 立体呈现
-  - 缩放
-- 动画
-  - 动画的实现步骤
-  - animation 复合属性
-  - animation 拆分写法
-- 平面转换
-  - 平移
-  - 定位居中
-  - 旋转
-  - 转换原点
-  - 多重转换
-  - 缩放
-  - 倾斜
-- 渐变
-  - 线性渐变
-  - 径向渐变
-- 移动 Web 基础
-  - 谷歌模拟器
-  - 屏幕分辨率
-  - 视口
-  - 二倍图
-  - 适配方案
-- rem
-  - 媒体查询
-  - rem 布局
-  - flexible.js
-  - rem 移动适配
-- less
-  - 注释
-  - 运算
-  - 嵌套
-  - 变量
-  - 导入
-  - 导出
-  - 禁止导出
-  - vw 和 vh 基本使用
-  - vw 布局
-  - vh 问题
-- 媒体查询
-  - 基本写法
-  - 书写顺序
-  - 完整写法
-    - 关键词/逻辑运算符
-    - 媒体类型
-    - 媒体特性
-  - 媒体查询-外部 CSS
-- Bootstrap
-  - 使用步骤
-  - 栅格系统
-  - 全局样式
-    - 按钮
-    - 表格
-  - 组件
-  - 字体图标
-
-## JavaScript（15 天）
-
-### JavaScript 基础
-
-- 是什么
-- 怎么写
-  - 内部方式
-  - 外部形式 ⭐
-  - 单行注释
-  - 多行注释
-  - 结束符
-  - 输入和输出语句
-- 变量
-  - 声明
-  - 赋值
-  - 变量更新
-  - 声明多个变量
-  - let 和 var 的区别 ⭐✅
-  - 变量的本质
-  - 变量名命名规则
-- 常量
-- 数据类型
-  - 数字型和字符串型
-  - 模版字符串 ⭐
-  - 布尔类型
-  - undefined
-- 运算符
-  - 算术运算符
-  - 赋值运算符
-  - 自增/自减运算符
-  - 比较运算符
-  - 逻辑运算符
-  - 运算符优先级
-- 类型转换
-  - 显式转换
-    - 转换为数字型
-    - 转换为字符串和布尔型
-  - 隐式转换
-- 语句
-  - 表达式和语句
-  - 分支语句
-    - if 分支语句
-    - if 双分支语句
-    - if 多分支语句
-    - 三元运算符 ⭐
-    - switch 语句
-    - 断点调试
-  - 循环语句
-    - while 循环
-    - for 循环
-    - 终止循环
-    - 无限循环
-- 循环嵌套
-- 数组
-  - 数组的基本使用
-    - 定义数组
-    - 访问数组和数组索引
-    - 遍历数组
-  - 操作数组
-    - 查询和修改数组
-    - 新增
-    - 删除
-    - 数组的 splice 方法 ⭐
-  - 数组排序 sort
-  - 选择排序(了解)
-- 函数
-  - 函数的声明
-  - 调用
-  - 函数参数
-  - 逻辑终端
-  - 函数默认参数
-  - 函数返回值
-  - 作用域
-    - 全局作用域
-    - 局部作用域
-    - 变量访问原则
-  - 匿名函数
-    - 函数表达式
-    - 立即执行函数 ⭐
-  - 对象的基本使用
-    - 对象属性
-    - 对象方法
-  - 操作对象
-  - 遍历对象
-- 内置对象
-  - Math
-    - 随机数 random✅
-  - 数据存储
-    - 内存中堆栈空间分配区别
-    - 变量声明
-
-### JavaScript 进阶
-
-- 作用域
-  - 局部作用域
-    - 函数作用域
-    - 块作用域
-  - 全局作用域
-  - 作用域链
-  - 垃圾回收机制
-  - 闭包 ⭐
-  - 变量提升 ⭐
-- 函数
-  - 函数提升
-  - 函数参数
-    - arguments 对象(了解)
-    - 剩余参数
-    - 展开运算符
-  - 箭头函数 ⭐
-    - 箭头函数中的 this
-  - ES6 对象简写
-- 解构赋值
-  - 数组解构
-  - 对象结构
-- filter 遍历数组 ⭐
-- 垃圾回收机制
-  - 引用计数法
-  - 标记清除法
-- 深入对象
-  - 创建对象的三种方式
-  - 构造函数
-    - new 实例化过程
-  - 实例成员&静态成员
-  - 一切皆对象 ⭐
-- 内置构造函数
-  - Object
-  - Array
-  - String
-  - Number
-- 编程思想
-  - 面向对象
-  - 面向过程
-  - 编程思想对比
-- 构造函数
-- 原型 ⭐✅
-  - 原型对象- prototype
-  - constuructor 属性
-  - 原型
-  - 原型链
-    - instanceof 运算符
-  - 原型继承
-- 深浅拷贝
-  - 浅拷贝
-  - 深拷贝
-    - 通过 JSON 序列化实现 ⭐
-    - js 库 [lodash](https://www.lodashjs.com/) 实现深拷贝 ✅
-    - 通过递归实现深拷贝
-- 异常处理
-  - throw
-  - try...catch...
-  - debugger
-- 处理 this
-  - 改变 this
-    - call()
-    - apply()
-    - bind()
-  - this 指向
-- 性能优化
-  - 防抖(debounce)
-    - 手写防抖函数
-  - 节流
-    - 手写节流函数
-- [ES6](https://es6.ruanyifeng.com/) ⭐✅
-
-## JQuery
-
-现在实际开发中很少使用 jQuery, 但是学有余力还是推荐学一下
-
-## AJAX（11 天）
-
-[黑马 AJAX 视频](https://www.bilibili.com/video/BV1MN411y7pw/?p=3&share_source=copy_web&vd_source=3d28bdd5ebea606ce5824f60e8fcef84)
-
-​ 按照视频学完即可 ajax node.js webpack git 都很重要 ⭐✅
-
-​ node.js webpack git 等不再编写知识结构按照视频学习即可
-
-[学习 AJAX 的接口文档](https://apifox.com/apidoc/project-1937884)
-
-[另一个接口文档](https://www.showdoc.com.cn/1834761734600444/8449558512832212)
-
-### AJAX 入门
-
-- AJAX 概念和 axios 的使用 [Axios 中文网](https://www.axios-http.cn/docs/intro)
-- 认识 URL
-- URL 查询参数
-- 常用请求方法和数据提交
-- axios 错误处理
-- HTTP 协议-请求报文
-- 请求报文-错误排查
-- HTTP 协议-响应报文
-- 什么是接口文档
-- [form-serialize](https://www.npmjs.com/package/form-serialize) 插件
-
-### AJAX 原理
-
-- XMLHttpRequest 的基础使用
-- XMLHttpRequest 查询参数
-- XMLHttpRequest 数据提交
-- 认识 Promise
-- Promise 的状态
-
-### AJAX 进阶
-
-- 同步代码和异步代码
-- 回调函数地狱
-- Promise 链式调用
-- Promise 链式调用解决回调地狱
-- async 函数和 await
-- async 函数和 await 捕获错误
-- 时间循环
-- 宏任务与微任务
-- Promise.all 静态方法
-
-### 参考文献
-
-- 入门
-
-  1. [客户端-> 百度百科](https://baike.baidu.com/item/客户端/101081?fr=aladdin)
-
-  2. [浏览器解释-> 百度百科](https://baike.baidu.com/item/浏览器/213911?fr=aladdin)
-
-  3. [服务器解释-> 百度百科](https://baike.baidu.com/item/服务器/100571?fr=aladdin)
-
-  4. [url 解释-> 百度百科](https://baike.baidu.com/item/统一资源定位系统/5937042?fromtitle=URL&fromid=110640&fr=aladdin)
-
-  5. [http 协议-> 百度百科](https://baike.baidu.com/item/HTTP?fromtitle=HTTP协议&fromid=1276942)
-
-  6. [主机名-> 百度百科](https://baike.baidu.com/item/主机名)
-
-  7. [端口号-> 百度百科](https://baike.baidu.com/item/%E7%AB%AF%E5%8F%A3%E5%8F%B)
-  8. [Ajax 解释-> 百度-懂啦](https://baike.baidu.com/tashuo/browse/content?id=11fca6ecdc2c066af4c5594f&lemmaId=8425&fromLemmaModule=pcBottom&lemmaTitle=ajax)
-
-  9. [Ajax 解释-> MDN 解释 Ajax 是与服务器通信而不只是请求](https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX/Getting_Started)
-
-  10. [axios-> 百度(可以点击播报听读音)](https://baike.baidu.com/item/axios)
-
-  11. [axios(github)地址](https://github.com/axios/axios)
-
-  12. [axios 官方推荐官网](https://axios-http.com/)
-  13. [axios(npmjs)地址](https://www.npmjs.com/package/axios)
-
-  14. [GET 和 POST 区别-> 百度百科](https://baike.baidu.com/item/post/2171305)
-
-  15. [报文讲解-> 百度百科](https://baike.baidu.com/item/报文/3164352)
-
-  16. [HTTP 状态码-> 百度百科](https://baike.baidu.com/item/HTTP状态码/5053660)
-
-  17. [接口概念-> 百度百科](https://baike.baidu.com/item/接口/2886384)
-
-- AJAX 原理
-
-  1. [Ajax 原生-mdn](https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX/Getting_Started)
-  2. [同步异步-mdn](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests)
-
-  3. [回调函数-mdn](https://developer.mozilla.org/zh-CN/docs/Glossary/Callback_function)
-
-  4. [Promise-mdn](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-
-- AJAX 进阶
-
-  1. [async 和 await 的 mdn 讲解](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function#尝试一下)
-
-## Vue2（7 天）
-
-[视频](https://www.bilibili.com/video/BV1HV4y1a7n4/?share_source=copy_web&vd_source=3d28bdd5ebea606ce5824f60e8fcef84)
-
-学习 elementui , vite,
-
-项目接口:
-
-​ [面经项目接口文档](https://apifox.com/apidoc/project-934563/api-20384513)（6 天）
-
-​ [极客园接口文档](http://toutiao.itheima.net/) 该文档中包含了 vue, vuex, react 等知识点, 里边还有该项目的实现过程, vue 学完可以学习 [TS](https://typescript.p6p.net/typescript-tutorial/intro.html)（6 天）
-
-​ [智慧园区项目视频](https://www.bilibili.com/video/BV1gK411t7Jg/?p=188&share_source=copy_web&vd_source=3d28bdd5ebea606ce5824f60e8fcef84)
-
-​ [智慧园区接口文档](https://apifox.com/apidoc/shared-056d7c04-303c-43cb-9b42-8e3d457844f5)（13 天）
-
-​ [黑马智慧园区演示地址](https://fe-hmzs.itheima.net/workbench)
-
-​ [《参考文档 1》 密码：ldto](https://www.yuque.com/yuqueyonghu0fbgvn/sgxy5x?#)
-
-​ [《前台可视化参考文档》 密码：glpb](https://www.yuque.com/yuqueyonghu0fbgvn/qdr69c?#)
-
-​ gitee 上搜索可以搜到项目源码, 项目开发过程中将自己的代码上传到 gitee 上, 练习 git 的使用
-
-- Vue 是什么？
-
-- 两种开发方式
-
-  - Vue 核心包开发（局部模块改造）
-
-  - Vue 核心包&Vue 插件&工程化
-
-- 使用 Vue 的步骤
-
-- 插值表达式
-
-- Vue 的核心特性——响应式
-
-- [Vue.js DevtoolsChrome 插件下载](https://chrome.zzzmh.cn/info/nhdogjmejiglipccpnnnanhbledajbpd)
-
-- 生命周期 ⭐✅
-
-- Vue 指令
-
-  1. 内容渲染指令（v-html、v-text）
-
-  1. 条件渲染指令（v-show、v-if、v-else、v-else-if）
-
-  1. 事件绑定指令（v-on）
-
-  1. 属性绑定指令 （v-bind）
-
-  1. 双向绑定指令（v-model）
-
-  1. 列表渲染指令（v-for）
-
-- 数组变化侦测
-
-- 指令修饰符
-  - 按键修饰符
-  - v-model 修饰符
-  - 事件修饰符
-  - v-bind 对样式的增强
-    - class 样式
-    - style 样式
-  - 计算属性
-    - 语法
-- computed 计算属性和 methods 方法
-- watch 侦听器(监视器)
-- 工程化开发
-  - 开发 Vue 的两种方式
-  - 脚手架 cue cli
-  - 安装 Vue 项目
-  - 运行项目
-    - 导入 xue
-- 普通组件的注册使用
-  - 局部注册
-  - 全局注册
-  - scoped 解决样式冲突
-  - scoped 原理 ⭐
-  - data 是一个函数 ⭐
-- 组件通信 ⭐✅
-  - 父传子
-  - 子传父
-  - 单向数据流原则
-  - prop & data , 单向数据流
-- 自定义指令
-
-  - props 完整校验
-  - v-model
-  - sync 修饰符
-  - 依赖注入
-  - ref 和 refs⭐
-
-- 路由
-  - 单页应用
-  - vue router
-  - vue 路由的安装与基础配置
-  - 嵌套路由
-  - 路由传参
-  - 重定向
-  - 历史模式
-  - 访问不存在 404
-  - 链接高亮
-  - 编程式导航
-- $nextTick
-- 插槽
-
-  - 具名插槽
-  - 作用域插槽
-
-- vuex⭐✅
-
-vue 学习完后可以学习
-
-[微信小程序（7 天）](https://megasu.atomgit.net/mini-app-note/)
-
-uniapp（11 天）
-
-学习完成之后可以学习 react.js （6 天）
-
-前端所有内容巩固之后可以进行鸿蒙学习（目前没有高质量的公开课，可以参考华为开发者联盟官方开发文档），或者进行全栈学习
-
-[面试题](https://lamphc.github.io/fe-up/#/)
+> 上面示例中，变量`foo`的后面使用冒号，声明了它的类型为`string`。
+
+类型声明的写法，一律为在标识符后面添加“**冒号 + 类型**”。函数参数和返回值，也是这样来声明类型。
+
+上面示例中，函数`toString()`的参数`num`的类型是`number`。参数列表的圆括号后面，声明了返回值的类型是`string`。更详细的介绍，参见《[**函数**](https://www.yuque.com/yuqueyonghu0fbgvn/fagz1g/function)》一章。
+
+注意，变量的值应该与声明的类型一致，如果不一致，TypeScript 就会报错。
+
+```typescript
+// 报错
+let foo: string = 123
+```
+
+上面示例中，变量`foo`的类型是字符串，但是赋值为数值`123`，TypeScript 就报错了。
+
+另外，TypeScript 规定，**变量只有赋值后才能使用**⭐，否则就会报错。
+
+```typescript
+let x: number
+console.log(x) // 报错
+```
+
+上面示例中，变量`x`没有赋值就被读取，导致报错。而 JavaScript 允许这种行为，不会报错，没有赋值的变量会返回`undefined`。
+
+## 类型推断
+
+类型声明并不是必需的，如果没有，TypeScript 会自己推断类型。
+
+```typescript
+let foo = 123
+```
+
+上面示例中，变量`foo`并没有类型声明，TypeScript 就会推断它的类型。由于它被赋值为一个数值，因此 TypeScript 推断它的类型为`number`。
+
+后面，如果变量`foo`更改为其他类型的值，跟推断的类型不一致，TypeScript 就会报错。
+
+```typescript
+let foo = 123
+foo = 'hello' // 报错
+```
+
+上面示例中，变量`foo`的类型推断为`number`，后面赋值为字符串，TypeScript 就报错了。
+
+TypeScript 也可以推断函数的返回值。
+
+```typescript
+function toString(num: number) {
+  return String(num)
+}
+```
+
+上面示例中，函数`toString()`没有声明返回值的类型，但是 TypeScript 推断返回的是字符串。**正是因为 TypeScript 的类型推断，所以函数返回值的类型通常是省略不写的。**
+
+从这里可以看到，TypeScript 的设计思想是，类型声明是可选的，你可以加，也可以不加。即使不加类型声明，依然是有效的 TypeScript 代码，只是这时不能保证 TypeScript 会正确推断出类型。由于这个原因，所有 JavaScript 代码都是合法的 TypeScript 代码。
+
+这样设计还有一个好处，将以前的 JavaScript 项目改为 TypeScript 项目时，你可以逐步地为老代码添加类型，即使有些代码没有添加，也不会无法运行。
+
+## TypeScript 的编译
+
+JavaScript 的运行环境（浏览器和 Node.js）不认识 TypeScript 代码。所以，TypeScript 项目要想运行，必须先转为 JavaScript 代码，这个代码转换的过程就叫做“编译”（compile）。
+
+TypeScript 官方没有做运行环境，只提供编译器。编译时，会将类型声明和类型相关的代码全部删除，只留下能运行的 JavaScript 代码，并且不会改变 JavaScript 的运行结果。
+
+因此，TypeScript 的类型检查只是编译时的类型检查，而不是运行时的类型检查。一旦代码编译为 JavaScript，运行时就不再检查类型了。
+
+## 值与类型
+
+学习 TypeScript 需要分清楚“值”（value）和“类型”（type）。
+
+“类型”是针对“值”的，可以视为是后者的一个元属性。每一个值在 TypeScript 里面都是有类型的。比如，`3`是一个值，它的类型是`number`。
+
+TypeScript 代码只涉及类型，不涉及值。所有跟“值”相关的处理，都由 JavaScript 完成。
+
+这一点务必牢记。TypeScript 项目里面，其实存在两种代码，一种是底层的“值代码”，另一种是上层的“类型代码”。前者使用 JavaScript 语法，后者使用 TypeScript 的类型语法。
+
+它们是可以分离的，TypeScript 的编译过程，实际上就是把“类型代码”全部拿掉，只保留“值代码”。
+
+编写 TypeScript 项目时，不要混淆哪些是值代码，哪些是类型代码。
+
+## TypeScript Playground
+
+最简单的 TypeScript 使用方法，就是使用官网的在线编译页面，叫做 [TypeScript Playground](http://www.typescriptlang.org/play/)。
+
+只要打开这个网页，把 TypeScript 代码贴进文本框，它就会在当前页面自动编译出 JavaScript 代码，还可以在浏览器执行编译产物。如果编译报错，它也会给出详细的报错信息。
+
+这个页面还具有支持完整的 IDE 支持，可以自动语法提示。此外，它支持把代码片段和编译器设置保存成 URL，分享给他人。
+
+本书的示例都建议放到这个页面，进行查看和编译。
+
+## tsc 编译器
+
+TypeScript 官方提供的编译器叫做 tsc，可以将 TypeScript 脚本编译成 JavaScript 脚本。本机想要编译 TypeScript 代码，必须安装 tsc。
+
+根据约定，TypeScript 脚本文件使用`.ts`后缀名，JavaScript 脚本文件使用`.js`后缀名。tsc 的作用就是把`.ts`脚本转变成`.js`脚本。
+
+### 安装
+
+tsc 是一个 npm 模块，使用下面的命令安装（必须先安装 npm）。
+
+```bash
+npm install -g typescript
+```
+
+上面命令是全局安装 tsc，也可以在项目中将 tsc 安装为一个依赖模块。
+
+安装完成后，检查一下是否安装成功。
+
+```bash
+# 或者 tsc --version
+tsc -v
+# Version 5.1.6
+```
+
+上面命令中，`-v`或`--version`参数可以输出当前安装的 tsc 版本。
+
+### 帮助信息
+
+`-h`或`--help`参数输出帮助信息。
+
+```bash
+$ tsc -h
+```
+
+默认情况下，“--help”参数仅显示基本的可用选项。我们可以使用“--all”参数，查看完整的帮助信息。
+
+```bash
+$ tsc --all
+```
+
+### 编译脚本
+
+安装 tsc 之后，就可以编译 TypeScript 脚本了。
+
+`tsc`命令后面，加上 TypeScript 脚本文件，就可以将其编译成 JavaScript 脚本。
+
+```bash
+$ tsc app.ts
+```
+
+上面命令会在当前目录下，生成一个`app.js`脚本文件，这个脚本就完全是编译后生成的 JavaScript 代码。
+
+`tsc`命令也可以一次编译多个 TypeScript 脚本。
+
+```bash
+$ tsc file1.ts file2.ts file3.ts
+```
+
+上面命令会在当前目录生成三个 JavaScript 脚本文件`file1.js`、`file2.js`、`file3.js`。
+
+tsc 有很多参数，可以调整编译行为。
+
+**（1）--outFile**
+
+如果想将多个 TypeScript 脚本编译成一个 JavaScript 文件，使用`--outFile`参数。
+
+```bash
+$ tsc file1.ts file2.ts --outFile app.js
+```
+
+上面命令将`file1.ts`和`file2.ts`两个脚本编译成一个 JavaScript 文件`app.js`。
+
+**（2）--outDir**
+
+编译结果默认都保存在当前目录，`--outDir`参数可以指定保存到其他目录。
+
+```bash
+$ tsc app.ts --outDir dist
+```
+
+上面命令会在`dist`子目录下生成`app.js`。
+
+**（3）--target**⭐
+
+为了保证编译结果能在各种 JavaScript 引擎运行，tsc 默认会将 TypeScript 代码编译成很低版本的 JavaScript，即 3.0 版本（以`es3`表示）。这通常不是我们想要的结果。
+
+这时可以使用`--target`参数，指定编译后的 JavaScript 版本。建议使用`es2015`，或者更新版本。
+
+```bash
+$ tsc --target es2015 app.ts
+```
+
+### 编译错误的处理
+
+编译过程中，如果没有报错，`tsc`命令不会有任何显示。所以，如果你没有看到任何提示，就表示编译成功了。
+
+如果编译报错，`tsc`命令就会显示报错信息，但是这种情况下，依然会编译生成 JavaScript 脚本。
+
+举例来说，下面是一个错误的 TypeScript 脚本`app.ts`。
+
+```typescript
+// app.ts
+let foo: number = 123
+foo = 'abc' // 报错
+```
+
+上面示例中，变量`foo`是数值类型，赋值为字符串，`tsc`命令编译这个脚本就会报错。
+
+```bash
+$ tsc app.ts
+
+app.ts:2:1 - error TS2322: Type 'string' is not assignable to type 'number'.
+
+2 foo = 'abc';
+  ~~~
+
+Found 1 error in app.ts:2
+```
+
+上面示例中，`tsc`命令输出报错信息，表示变量`foo`被错误地赋值为字符串。
+
+这种情况下，编译产物`app.js`还是会照样生成，下面就是编译后的结果。
+
+```javascript
+// app.js
+var foo = 123
+foo = 'abc'
+```
+
+可以看到，尽管有错，tsc 依然原样将 TypeScript 编译成 JavaScript 脚本。
+
+这是因为 TypeScript 团队认为，编译器的作用只是给出编译错误，至于怎么处理这些错误，那就是开发者自己的判断了。开发者更了解自己的代码，所以不管怎样，编译产物都会生成，让开发者决定下一步怎么处理。
+
+如果希望一旦报错就停止编译，不生成编译产物，可以使用`--noEmitOnError`参数。
+
+```bash
+$ tsc --noEmitOnError app.ts
+```
+
+上面命令在报错后，就不会生成`app.js`。
+
+tsc 还有一个`--noEmit`参数，只检查类型是否正确，不生成 JavaScript 文件。
+
+```bash
+$ tsc --noEmit app.ts
+```
+
+上面命令只检查是否有编译错误，不会生成`app.js`。
+
+tsc 命令的更多参数，详见《[**tsc 编译器**](https://www.yuque.com/yuqueyonghu0fbgvn/fagz1g/tsc)》一章。
+
+### tsconfig.json
+
+TypeScript 允许将`tsc`的编译参数，写在配置文件`tsconfig.json`。只要当前目录有这个文件，`tsc`就会自动读取，所以运行时可以不写参数。
+
+```bash
+$ tsc file1.ts file2.ts --outFile dist/app.js
+```
+
+上面这个命令写成`tsconfig.json`，就是下面这样。
+
+```json
+{
+  "files": ["file1.ts", "file2.ts"],
+  "compilerOptions": {
+    "outFile": "dist/app.js"
+  }
+}
+```
+
+有了这个配置文件，编译时直接调用`tsc`命令就可以了。
+
+```bash
+$ tsc
+```
+
+`tsconfig.json`的详细介绍，参见《[**tsconfig.json 配置文件**](https://www.yuque.com/yuqueyonghu0fbgvn/fagz1g/tsconfig.json)》一章。
+
+## ts-node 模块
+
+- [**ts-node**](https://github.com/TypeStrong/ts-node) 是一个非官方的 npm 模块，可以直接运行 TypeScript 代码。
+
+使用时，可以先全局安装它。
+
+```bash
+npm install -g ts-node
+```
+
+安装后，就可以直接运行 TypeScript 脚本。
+
+```powershell
+ts-node script.ts
+```
+
+上面命令运行了 TypeScript 脚本`script.ts`，给出运行结果。
+
+如果不安装 ts-node，也可以通过 npx 调用它来运行 TypeScript 脚本。
+
+```bash
+npx ts-node script.ts
+```
+
+上面命令中，`npx`会在线调用 ts-node，从而在不安装的情况下，运行`script.ts`。
+
+如果执行 ts-node 命令不带有任何参数，它会提供一个 TypeScript 的命令行 REPL 运行环境，你可以在这个环境中输入 TypeScript 代码，逐行执行。
+
+```bash
+$ ts-node
+>
+```
+
+上面示例中，单独运行`ts-node`命令，会给出一个大于号，这就是 TypeScript 的 REPL 运行环境，可以逐行输入代码运行。
+
+```js title="测试.js"
+$ ts-node
+> const twice = (x:string) => x + x;
+> twice('abc')
+'abcabc'
+>
+```
+
+<details class="lake-collapse"><summary id="u0f216f16"><span class="ne-text">折叠块</span></summary><p id="ue84fb4e5" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">上面示例中，在 TypeScript 命令行 REPL 环境中，先输入一个函数</span><code class="ne-code" style="font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace; background-color: rgba(0, 0, 0, 0.06); border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 2px; padding: 0px 2px"><span class="ne-text">twice</span></code><span class="ne-text">，然后调用该函数，就会得到结果。</span></p></details>
+
+要退出这个 REPL 环境，可以按下 Ctrl + d，或者输入`.exit`。
+
+如果只是想简单运行 TypeScript 代码看看结果，ts-node 不失为一个便捷的方法。

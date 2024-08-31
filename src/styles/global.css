@@ -26,12 +26,12 @@
 
 @font-face {
 	font-family: '字魂白鸽天行体';
-	src: url('/public/fonts/字魂白鸽天行体.ttf') format('woff');
+	src: url('/src/assets/fonts/字魂白鸽天行体.ttf') format('woff');
 }
 
 @font-face {
 	font-family: 'MiaoZi';
-	src: url('/public/fonts/MiaoZi-YunYingTi-2.ttf') format('woff');
+	src: url('/src/assets/fonts/MiaoZi-YunYingTi-2.ttf') format('woff');
 }
 
 @font-face {

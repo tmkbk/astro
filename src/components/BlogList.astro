@@ -15,7 +15,7 @@ const pageTitle = "mkbk的 Astro 学习博客";
             <a href={post.url}>
               <div class="image">
                 <img
-                  src={post.frontmatter.image.url}
+                  src={post.frontmatter.image.url?post.frontmatter.image.url:"https://docs.astro.build/assets/rose.webp"}
                   alt={post.frontmatter.image.alt}
                 />
               </div>
@@ -59,8 +59,8 @@ const pageTitle = "mkbk的 Astro 学习博客";
           box-shadow: 0px 3px 10px 0px rgb(172, 171, 171);
         }
         a {
-          &:hover{
-            color:#6bb7d3;
+          &:hover {
+            color: #6bb7d3;
           }
           .image {
             width: 200px;

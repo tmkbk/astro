@@ -8,7 +8,46 @@ const { tags } = Astro.props;
     {tags.map((tag) => <span class="iconfont blogtags tags">{tag}</span>)}
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tagsContainer = document.querySelector(".category");
 
+    if (!tagsContainer) return;
+    const rect = tagsContainer.getBoundingClientRect();
+    let lastScrollPosition = 0;
+    let ticking = false;
+    function updateTagsContainer() {
+      ticking = false;
+      if (tagsContainer) {
+        // 屏幕滚动距离
+        const scrollPosition =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        console.log(scrollPosition, rect.top);
+        if (scrollPosition - rect.top + 80 >= 0) {
+          tagsContainer.classList.add("fixed-tags");
+        } else {
+          tagsContainer.classList.remove("fixed-tags");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", function () {
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      // 只在滚动位置变化时才考虑更新
+      if (currentScrollPosition !== lastScrollPosition) {
+        lastScrollPosition = currentScrollPosition;
+
+        // 使用节流技术
+        if (!ticking) {
+          window.requestAnimationFrame(updateTagsContainer);
+          ticking = true;
+        }
+      }
+    });
+  });
+</script>
 <style lang="less" scoped>
   .category {
     position: relative;
@@ -32,5 +71,9 @@ const { tags } = Astro.props;
         margin: 5px;
       }
     }
+  }
+  .fixed-tags {
+    position: fixed;
+    top: 80px;
   }
 </style>
