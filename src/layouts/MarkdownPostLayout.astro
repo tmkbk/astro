@@ -3,8 +3,13 @@ import Category from "../components/Category.astro";
 import Main from "../components/main.astro";
 import BaseLayout from "./BaseLayout.astro";
 import "../styles/mdBase.css";
-// const allPosts = await Astro.glob("../pages/posts/*.md");
+const allPosts = await Astro.glob("../pages/posts/*.md");
 const { frontmatter } = Astro.props;
+const currentPostIndex = allPosts.findIndex((post) => {
+  return post.url === Astro.props.url;
+});
+const prevPost = allPosts[currentPostIndex - 1];
+const nextPost = allPosts[currentPostIndex + 1];
 ---
 
 <BaseLayout>
@@ -16,12 +21,12 @@ const { frontmatter } = Astro.props;
       <div class="showInfo">
         <h1>{frontmatter.title}</h1>
         <div class="showBaseInfo">
-          <div>💻更新时间： <code>{frontmatter.pubDate}</code></div>
+          <div>💻更新时间：<code>{frontmatter.pubDate}</code></div>
           <div>
-            🔍字数统计： <code>{frontmatter.minutesRead.words}字</code>
+            🔍字数统计：<code>{frontmatter.minutesRead.words}字</code>
           </div>
           <div>
-            🕑阅读时长： <code
+            🕑阅读时长：<code
               >{Math.floor(frontmatter.minutesRead.minutes)}'{
                 Math.floor(
                   (frontmatter.minutesRead.minutes -
@@ -34,7 +39,26 @@ const { frontmatter } = Astro.props;
         </div>
         <hr />
         <slot />
-        <a href="">下一篇</a>
+        <div class="endOpt">
+          {
+            prevPost ? (
+              <a href={prevPost.url} class="prev">
+                上一篇
+              </a>
+            ) : (
+              <a class="disabled">上一篇</a>
+            )
+          }
+          {
+            nextPost ? (
+              <a href={nextPost.url} class="next">
+                下一篇
+              </a>
+            ) : (
+              <a class="disabled">下一篇</a>
+            )
+          }
+        </div>
       </div>
     </div>
   </Main>
@@ -52,8 +76,26 @@ const { frontmatter } = Astro.props;
       position: relative;
       float: right;
       border-radius: 10px;
+      .prev {
+        &:hover {
+          color: #6bb7d3;
+        }
+      }
+      .next {
+        &:hover {
+          color: #6bb7d3;
+        }
+      }
       .showBaseInfo {
         letter-spacing: 2px;
+      }
+    }
+    .endOpt {
+      display: flex;
+      justify-content: space-between;
+      .disabled {
+          color: #c0c2c3;
+          cursor: not-allowed;
       }
     }
   }

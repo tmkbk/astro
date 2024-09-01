@@ -267,3 +267,17 @@ function stopp () {
     startSakura()
   }
 }
+
+// 置顶按钮配置
+const toTop = document.querySelector('footer .toTop')
+window.addEventListener('scroll', function () {
+  const currentScrollPosition =
+    window.pageYOffset || document.documentElement.scrollTop
+
+  if (currentScrollPosition > 200) {
+    console.log(111)
+    console.log(toTop)
+    toTop.style.display = 'block'
+  } else toTop.style.display = 'none'
+})
+

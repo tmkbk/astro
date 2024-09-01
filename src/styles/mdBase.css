@@ -14,6 +14,8 @@ h2 {
 }
 code {
   border-radius: 5px;
+  margin: 0 5px;
+  background: rgba(0, 0, 0, 0.06);
 }
 blockquote {
   border-left: 4px solid var(--yinyong);
@@ -21,4 +23,18 @@ blockquote {
 }
 blockquote p {
   font-size: 20px;
+}
+details {
+  box-shadow: 0.1rem 0.1rem 0.2rem #00000028;
+  border-radius: 8px;
+}
+details summary {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f3f3f3;
+}
+details p {
+  background-color: #fafbfc;
+  padding: 0 15px !important;
+  font-size: 18px;
 }
