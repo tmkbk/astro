@@ -38,6 +38,11 @@ details p {
   padding: 0 15px !important;
   font-size: 18px;
 }
-.header {
-  z-index: 0!important;
+.expressive-code .frame.is-terminal .header {
+  z-index: 0;
+}
+@media screen and (max-width: 720px) {
+  .expressive-code {
+    margin-bottom: 30px;
+  }
 }
