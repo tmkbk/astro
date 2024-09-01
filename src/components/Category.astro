@@ -73,4 +73,10 @@ const { tags } = Astro.props;
     position: fixed;
     top: 80px;
   }
+  @media screen and (max-width: 720px) {
+    .fixed-tags {
+      position: relative;
+      top: -160px;
+    }
+  }
 </style>

@@ -94,8 +94,24 @@ const nextPost = allPosts[currentPostIndex + 1];
       display: flex;
       justify-content: space-between;
       .disabled {
-          color: #c0c2c3;
-          cursor: not-allowed;
+        color: #c0c2c3;
+        cursor: not-allowed;
+      }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .box1 {
+      width: 100%;
+      flex-direction: column;
+      top: -130px;
+      position: relative;
+      border-radius: 10px;
+      .showInfo {
+        width: auto;
+        margin: 0;
+        // padding: 20px;
+        // position: static;
+        // float: none;
       }
     }
   }

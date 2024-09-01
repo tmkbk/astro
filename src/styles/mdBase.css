@@ -38,3 +38,6 @@ details p {
   padding: 0 15px !important;
   font-size: 18px;
 }
+.header {
+  z-index: 0!important;
+}
