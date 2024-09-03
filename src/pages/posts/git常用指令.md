@@ -15,3 +15,9 @@ tags: ['git']
 
 ## git初始化
 ![alt text](image.png)
+> 初始化设置用户名和邮箱
+```git title="git初始化"
+git config --global user.name "your name"
+git config --global user.email "your email"
+git config --global credential.helper store
+```
