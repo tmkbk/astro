@@ -12,6 +12,9 @@ h1 {
 h2 {
   font-size: 1.8em;
 }
+p img {
+  box-shadow: 1px 1px 7px 1px rgba(154, 154, 154, 0.6);
+}
 code {
   border-radius: 5px;
   margin: 0 5px;
@@ -20,8 +23,6 @@ code {
 blockquote {
   border-left: 4px solid var(--yinyong);
   padding: 0 0 0 8px;
-}
-blockquote p {
   font-size: 20px;
 }
 details {
